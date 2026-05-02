@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Register | Tourist Sakha Portal{% endblock %}
+
+{% block content %}
+<h2 class="page-heading">Citizen Registration</h2>
+<p class="page-intro">
+  Create your account to access the complaint submission facility. All fields below are required.
+</p>
+
+<section class="form-layout">
+  <article class="form-card">
+    <div class="form-card-header">
+      <h2>Registration Form</h2>
+      <p class="form-note">Enter correct personal details as they will be used for account access.</p>
+    </div>
+
+    <div class="form-card-body">
+      <form method="post" class="form-grid">
+        <div class="field-group">
+          <label for="name">Full Name</label>
+          <input id="name" type="text" name="name" placeholder="Enter your full name" minlength="2" required>
+        </div>
+
+        <div class="field-group">
+          <label for="mobile_no">Mobile Number</label>
+          <input id="mobile_no" type="tel" name="mobile_no" placeholder="Enter 10-digit mobile number" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" required>
+        </div>
+
+        <div class="field-group">
+          <label for="email">Email Address</label>
+          <input id="email" type="email" name="email" placeholder="Enter your email address" required>
+        </div>
+
+        <div class="field-group">
+          <label for="password">Password</label>
+          <input id="password" type="password" name="password" placeholder="Create your password" minlength="2" required>
+        </div>
+
+        <div class="form-actions">
+          <input type="submit" value="Register Account">
+          <p class="form-note">Already registered? <a href="{{ url_for('login') }}">Go to login</a>.</p>
+        </div>
+      </form>
+    </div>
+  </article>
+
+  <aside class="side-card">
+    <h3>Registration Guidance</h3>
+    <ul class="check-list">
+      <li>Provide the same mobile number that you will use for login.</li>
+      <li>Use a working email address for future communication.</li>
+      <li>Keep your password secure and easy for you to remember.</li>
+    </ul>
+  </aside>
+</section>
+{% endblock %}

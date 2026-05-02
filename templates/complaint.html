@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Complaint Form | Tourist Sakha Portal{% endblock %}
+
+{% block content %}
+<h2 class="page-heading">Retailer Complaint Submission</h2>
+<p class="page-intro">
+  Use this page to report a retailer or shopkeeper charging more than the listed MRP.
+  Enter full details of the incident for review.
+</p>
+
+<section class="form-layout">
+  <article class="form-card">
+    <div class="form-card-header">
+      <h2>Complaint Details</h2>
+      <p class="form-note">Provide retailer identity, contact details, address, and a clear event description.</p>
+    </div>
+
+    <div class="form-card-body">
+      <form method="post" class="form-grid">
+        <div class="field-group">
+          <label for="rname">Retailer Name</label>
+          <input id="rname" type="text" name="rname" placeholder="Enter retailer or shopkeeper name" minlength="2" required>
+        </div>
+
+        <div class="field-group">
+          <label for="rmobile_no">Retailer Mobile Number</label>
+          <input id="rmobile_no" type="tel" name="rmobile_no" placeholder="Enter retailer mobile number" inputmode="numeric" maxlength="13" required>
+        </div>
+
+        <div class="field-group">
+          <label for="raddress">Shop or Retailer Address</label>
+          <input id="raddress" type="text" name="raddress" placeholder="Enter shop address or location" minlength="4" required>
+        </div>
+
+        <div class="field-group">
+          <label for="discription">Incident Description</label>
+          <textarea id="discription" name="discription" placeholder="Describe how the goods were sold above MRP" minlength="5" required></textarea>
+        </div>
+
+        <div class="form-actions">
+          <input type="submit" value="Submit Complaint">
+          <p class="form-note">Please review all entries before submission.</p>
+        </div>
+      </form>
+    </div>
+  </article>
+
+  <aside class="side-card">
+    <h3>Submission Guidance</h3>
+    <ul class="check-list">
+      <li>Mention the retailer name exactly as displayed or known.</li>
+      <li>Provide the location in enough detail for follow-up action.</li>
+      <li>Describe the event clearly, including product and price issue if possible.</li>
+    </ul>
+  </aside>
+</section>
+{% endblock %}

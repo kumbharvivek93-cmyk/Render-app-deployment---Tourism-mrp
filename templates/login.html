@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Login | Tourist Sakha Portal{% endblock %}
+
+{% block content %}
+<h2 class="page-heading">Account Login</h2>
+<p class="page-intro">
+  Sign in with your registered mobile number and password to access the complaint form.
+</p>
+
+<section class="form-layout">
+  <article class="form-card">
+    <div class="form-card-header">
+      <h2>Login Credentials</h2>
+      <p class="form-note">Only registered users can proceed to the complaint submission page.</p>
+    </div>
+
+    <div class="form-card-body">
+      <form method="post" class="form-grid">
+        <div class="field-group">
+          <label for="mobile_no">Registered Mobile Number</label>
+          <input id="mobile_no" type="tel" name="mobile_no" placeholder="Enter registered mobile number" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" required>
+        </div>
+
+        <div class="field-group">
+          <label for="password">Password</label>
+          <input id="password" type="password" name="password" placeholder="Enter your password" required>
+        </div>
+
+        <div class="form-actions">
+          <input type="submit" value="Login">
+          <p class="form-note">New user? <a href="{{ url_for('signup') }}">Register here</a>.</p>
+        </div>
+      </form>
+    </div>
+  </article>
+
+  <aside class="side-card">
+    <h3>Access Note</h3>
+    <p>
+      This page is intended for returning users. If your account is not yet created,
+      complete registration first and then log in with the same mobile number.
+    </p>
+  </aside>
+</section>
+{% endblock %}

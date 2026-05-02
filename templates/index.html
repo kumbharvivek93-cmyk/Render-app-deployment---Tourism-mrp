@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Home | Tourist Sakha Portal{% endblock %}
+
+{% block content %}
+<section class="hero-panel">
+  <div>
+    <p class="section-tag">Consumer Protection Support</p>
+    <h2>Submit retailer complaints through a clear and official-looking public portal.</h2>
+    <p>
+      Tourist Sakha helps users report shops or retailers who force sales above the Maximum Retail Price.
+      Register your account, sign in, and provide the incident details for complaint review.
+    </p>
+
+    <div class="action-row">
+      <a class="button" href="{{ url_for('login') }}">Login to Continue</a>
+      <a class="button secondary" href="{{ url_for('signup') }}">Create New Account</a>
+    </div>
+  </div>
+
+  <div class="info-stack">
+    <article class="notice-card">
+      <h3>Official Notice</h3>
+      <p>
+        This interface is intended for complaint intake. Please keep retailer contact details,
+        location details, and event description ready before submission.
+      </p>
+    </article>
+    <article class="notice-card">
+      <h3>Before You Start</h3>
+      <p>Use accurate information so the complaint can be reviewed without delay.</p>
+      <ul class="check-list">
+        <li>Register with your name, mobile number, email, and password.</li>
+        <li>Log in using your registered mobile number and password.</li>
+        <li>Submit retailer name, mobile number, address, and incident description.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section class="content-grid">
+  <article class="content-card">
+    <h3>Complaint Process</h3>
+    <ol class="step-list">
+      <li>Create your citizen account using the registration page.</li>
+      <li>Access the complaint form through the login page.</li>
+      <li>Enter retailer details and describe the over-MRP incident clearly.</li>
+    </ol>
+  </article>
+
+  <article class="content-card">
+    <h3>Portal Purpose</h3>
+    <p>
+      The portal is designed to make complaint filing simple, readable, and trustworthy for public users.
+      The interface follows a restrained government-style layout rather than a bright commercial design.
+    </p>
+  </article>
+</section>
+{% endblock %}
