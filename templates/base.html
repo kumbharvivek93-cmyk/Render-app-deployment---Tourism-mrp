@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Tourist Sakha Portal{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/gov.css') }}">
+</head>
+<body>
+  <div class="flag-strip" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand-block">
+        <div class="brand-seal">TS</div>
+        <div>
+          <p class="eyebrow">Public Complaint Support</p>
+          <h1 class="site-title">Tourist Sakha Consumer Portal</h1>
+          <p class="site-subtitle">Complaint intake for over-MRP retail sale reporting</p>
+        </div>
+      </div>
+
+      <nav class="top-nav" aria-label="Primary">
+        <a class="{{ 'active' if request.endpoint == 'home' else '' }}" href="{{ url_for('home') }}">Home</a>
+        <a class="{{ 'active' if request.endpoint == 'signup' else '' }}" href="{{ url_for('signup') }}">Register</a>
+        <a class="{{ 'active' if request.endpoint == 'login' else '' }}" href="{{ url_for('login') }}">Login</a>
+        <a class="{{ 'active' if request.endpoint == 'complaint' else '' }}" href="{{ url_for('complaint') }}">Complaint</a>
+      </nav>
+    </div>
+  </header>
+
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <section class="flash-wrap">
+        <div class="container">
+          {% for msg in messages %}
+            <div class="flash-message">{{ msg }}</div>
+          {% endfor %}
+        </div>
+      </section>
+    {% endif %}
+  {% endwith %}
+
+  <main class="page-shell">
+    <div class="container">
+      {% block content %}{% endblock %}
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p>Citizen support interface for complaint submission and account access.</p>
+        <p>Use accurate retailer and incident details for faster review.</p>
+      </div>
+      <div class="footer-credit">
+        <p>Designed and developed by Vivek Kumbhar.</p>
+        <p>Copyright © 2026 Vivek Kumbhar. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
