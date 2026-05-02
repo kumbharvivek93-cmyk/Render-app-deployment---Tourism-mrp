@@ -3,4 +3,3 @@ Flask-SQLAlchemy
 SQLAlchemy
 gunicorn
 python-dotenv
-gunicorn app:app
